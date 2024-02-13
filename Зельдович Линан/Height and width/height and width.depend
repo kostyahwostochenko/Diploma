@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1707050973 source:c:\users\домашн\desktop\вычматы\Зельдович Линан\height and width\main.cpp
+	<iostream>
+	<vector>
+	<cmath>
+	<fstream>
+	<algorithm>
+	<omp.h>
+	"..\headers\solver.h"
+	"..\headers\configuration.h"
+	"..\headers\params.h"
+
+1706875594 c:\users\домашн\desktop\вычматы\Зельдович Линан\headers\solver.h
+	<vector>
+	<iostream>
+	<omp.h>
+	"..\headers\params.h"
+
+1707050649 c:\users\домашн\desktop\вычматы\Зельдович Линан\headers\params.h
+	<cmath>
+
+1706875995 c:\users\домашн\desktop\вычматы\Зельдович Линан\headers\configuration.h
+	<vector>
+	<fstream>
+	"solver.h"
+

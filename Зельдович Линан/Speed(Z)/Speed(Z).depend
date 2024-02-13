@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1706899984 source:c:\users\домашн\desktop\вычматы\Зельдович Линан\find_speed\main.cpp
+	<iostream>
+	<vector>
+	<cmath>
+	<fstream>
+	<algorithm>
+	"..\headers\solver.h"
+	"..\headers\configuration.h"
+	"..\headers\params.h"
+
+1706875594 c:\users\домашн\desktop\вычматы\Зельдович Линан\headers\solver.h
+	<vector>
+	<iostream>
+	<omp.h>
+	"..\headers\params.h"
+
+1706899856 c:\users\домашн\desktop\вычматы\Зельдович Линан\headers\params.h
+
+1706875995 c:\users\домашн\desktop\вычматы\Зельдович Линан\headers\configuration.h
+	<vector>
+	<fstream>
+	"solver.h"
+

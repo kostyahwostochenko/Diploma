@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1707490278 source:c:\users\домашн\desktop\вычматы\Зельдович Линан\solve\main.cpp
+	<iostream>
+	<vector>
+	<cmath>
+	<fstream>
+	<algorithm>
+	<omp.h>
+	"..\headers\solver.h"
+	"..\headers\configuration.h"
+	"..\headers\params.h"
+
+1707140921 c:\users\домашн\desktop\вычматы\Зельдович Линан\headers\solver.h
+	<vector>
+	<iostream>
+	<omp.h>
+	"..\headers\params.h"
+
+1707491147 c:\users\домашн\desktop\вычматы\Зельдович Линан\headers\params.h
+	<cmath>
+
+1706875995 c:\users\домашн\desktop\вычматы\Зельдович Линан\headers\configuration.h
+	<vector>
+	<fstream>
+	"solver.h"
+
+1707742490 source:c:\users\домашн\desktop\diploma\Зельдович Линан\solve\main.cpp
+	<iostream>
+	<vector>
+	<cmath>
+	<fstream>
+	<algorithm>
+	<omp.h>
+	"..\Headers\solver.h"
+	"..\Headers\configuration.h"
+	"..\Headers\params.h"
+
+1707565632 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\solver.h
+	<vector>
+	<iostream>
+	<omp.h>
+	"..\Headers\params.h"
+
+1707742730 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\params.h
+	<cmath>
+	<string>
+
+1707569924 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\configuration.h
+	<vector>
+	<fstream>
+	<string>
+	"solver.h"
+	"params.h"
+
