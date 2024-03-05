@@ -5,12 +5,13 @@ from matplotlib.animation import FuncAnimation
 from scipy.optimize import curve_fit
 
 
+
 def func(x, k, b):
     return k*x**b
 
-data_1 = np.loadtxt("../../../Data/Speed/R/Z = 8, Le_F = 1, Le_X = 1, q = 0.2, sigma = 0.15.txt")
-data_2 = np.loadtxt("../../../Data/Speed/R/Z = 8, Le_F = 1, Le_X = 1, q = 0.5, sigma = 0.15.txt")
-data_3 = np.loadtxt("../../../Data/Speed/R/Z = 8, Le_F = 1, Le_X = 1, q = 0.9, sigma = 0.15.txt")
+data_1 = np.loadtxt("../../../Data/Speed/R/Z = 8, Le_F = 0.5, Le_X = 1, q = 0.9, sigma = 0.15.txt")
+data_2 = np.loadtxt("../../../Data/Speed/R/Z = 8, Le_F = 1, Le_X = 1, q = 0.9, sigma = 0.15.txt")
+data_3 = np.loadtxt("../../../Data/Speed/R/Z = 8, Le_F = 1.5, Le_X = 1, q = 0.9, sigma = 0.15.txt")
 
 
 speed_1 = data_1[:, 0]
@@ -44,9 +45,9 @@ plt.plot(R_3, speed_3, '-', color = 'g')
 
 
 #plt.legend(['Данные', str(np.exp(b).round(2))+'$\cdot R^{'+str(k.round(2))+'}$ - аппроксимация '], loc = 'best')
-plt.legend(['q = 0.2', 'q = 0.5', 'q = 0.9'])
+plt.legend(['$Le_F$ = 0.5', '$Le_F$ = 1', '$Le_F$ = 1.5'])
 plt.xlabel('R')
-plt.ylabel('speed')
+plt.ylabel('Speed')
 
 
 plt.grid()

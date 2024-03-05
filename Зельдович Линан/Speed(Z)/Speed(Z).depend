@@ -22,3 +22,31 @@
 	<fstream>
 	"solver.h"
 
+1708035705 source:c:\users\домашн\desktop\diploma\Зельдович Линан\speed(z)\main.cpp
+	<iostream>
+	<vector>
+	<cmath>
+	<fstream>
+	<algorithm>
+	<string>
+	"..\Headers\solver.h"
+	"..\Headers\configuration.h"
+	"..\Headers\params.h"
+
+1707565632 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\solver.h
+	<vector>
+	<iostream>
+	<omp.h>
+	"..\Headers\params.h"
+
+1708034770 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\params.h
+	<cmath>
+	<string>
+
+1707569924 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\configuration.h
+	<vector>
+	<fstream>
+	<string>
+	"solver.h"
+	"params.h"
+

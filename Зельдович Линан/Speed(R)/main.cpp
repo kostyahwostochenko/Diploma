@@ -27,8 +27,9 @@ int main()
     //make_defaul_config(temp, X, Y, temp_left, X_left, Y_left, temp_right, X_right, Y_right, place, dx);
 
 
-    double speed_arr[21] = {0.556, 0.5605, 0.564, 0.569, 0.573, 0.577, 0.581, 0.585, 0.5885, 0.592, 0.5945, 0.596,
-                            0.5975, 0.5975, 0.596, 0.594, 0.5895, 0.584, 0.576, 0.5655, 0.553};
+    double speed_arr[31] = {0.076, 0.0805, 0.0845, 0.0895, 0.0945, 0.099, 0.104, 0.1095, 0.115, 0.121, 0.127,
+                            0.1325, 0.139, 0.145, 0.151, 0.1575, 0.164, 0.17, 0.176, 0.1815, 0.187, 0.1925,
+                            0.1975, 0.201, 0.205, 0.2075, 0.2085, 0.2085, 0.2075, 0.204, 0.1985};
     int cnt = 0;
 
 
@@ -45,8 +46,8 @@ int main()
 
 
 
-    R = 0.03;
-    T_config = 3000;
+    R = 0.005;
+    T_config = 10000;
     T = 500;
 
     while (R <= 0.51){
@@ -54,7 +55,8 @@ int main()
         load_config(temp, X, Y);
 
         speed_config = -speed_arr[cnt];
-        dt = 0.02;
+
+        dt = 0.2;
         scale_t_stab = int(T_config/dt);
 
         for(int i = 1; i < scale_t_stab + 1; i++){
@@ -74,7 +76,7 @@ int main()
         }
 
         speed = 0;
-        dt = 0.02;
+        dt = 0.2;
         scale_t = int(T/dt);
 
         auto max_x_start = max_element(X.begin(), X.end());
@@ -129,7 +131,7 @@ int main()
         cout << '\n';
 
 
-        R = 1.15*R;
+        R = 1.166*R;
         cnt++;
 
     }

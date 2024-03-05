@@ -25,9 +25,9 @@ int main()
     if(cnt < 1){
         cnt = 1;}
 
-    //make_config(temp, X, Y, temp_left, X_left, Y_left, temp_right, X_right, Y_right, z, sigma, Le_X, Le_F, q, R, teta, dt, dx, T_config, place, speed);
+    //make_config(temp, X, Y, temp_left, X_left, Y_left, temp_right, X_right, Y_right, z, sigma, Le_X, Le_F, q, R, teta, dt, dx, T_config, place, speed_config);
     make_defaul_config(temp, X, Y, temp_left, X_left, Y_left, temp_right, X_right, Y_right, place, dx);
-    load_config(temp, X, Y);
+    //load_config(temp, X, Y);
     calculate_w(w, temp, X, Y, z);
 
 
@@ -55,6 +55,7 @@ int main()
     print_vector_in_file(Y, Y_file);
     print_vector_in_file(w, w_file);
 
+    auto max_x_start = max_element(X.begin(), X.end());
 
 
     for(int i = 1; i < scale_t + 1; i++){
@@ -80,9 +81,16 @@ int main()
             print_vector_in_file(Y, Y_file);
             print_vector_in_file(w, w_file);
             cout << double(i)/scale_t*100 << "%" << '\n';
+            auto aaa = distance(X.begin(), max_element(X.begin(), X.end()));
+            cout << z*z*Y[aaa]*exp(z*(1-1/temp[aaa])) << '\n';
         }
 
     }
+
+    auto max_x_finish = max_element(X.begin(), X.end());
+    double u_speed = distance(max_x_start, max_x_finish)*dx/T;
+
+    cout << u_speed << '\n';
 
     temp_file.close();
     X_file.close();

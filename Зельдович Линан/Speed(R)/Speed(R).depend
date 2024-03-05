@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1708256107 source:c:\users\домашн\desktop\diploma\Зельдович Линан\speed(r)\main.cpp
+	<iostream>
+	<vector>
+	<cmath>
+	<fstream>
+	<algorithm>
+	"..\Headers\solver.h"
+	"..\Headers\configuration.h"
+	"..\Headers\params.h"
+
+1707565632 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\solver.h
+	<vector>
+	<iostream>
+	<omp.h>
+	"..\Headers\params.h"
+
+1708255953 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\params.h
+	<cmath>
+	<string>
+
+1707569924 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\configuration.h
+	<vector>
+	<fstream>
+	<string>
+	"solver.h"
+	"params.h"
+

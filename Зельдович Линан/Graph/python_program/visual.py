@@ -3,9 +3,9 @@ import numpy as np
 import math
 from matplotlib.animation import FuncAnimation
 
-temp = np.loadtxt("../../Data/Current/Temp Z = 8, Le_F = 1, Le_X = 0.4, R = 0.005, q = 0.9, sigma = 0.15.txt")
-X = np.loadtxt("../../Data/Current/X Z = 8, Le_F = 1, Le_X = 0.4, R = 0.005, q = 0.9, sigma = 0.15.txt")
-Y = np.loadtxt("../../Data/Current/Y Z = 8, Le_F = 1, Le_X = 0.4, R = 0.005, q = 0.9, sigma = 0.15.txt")
+temp = np.loadtxt("../../Data/Current/Temp Z = 8, Le_F = 1, Le_X = 1, R = 0.005, q = 0.9, sigma = 0.15.txt")
+X = np.loadtxt("../../Data/Current/X Z = 8, Le_F = 1, Le_X = 1, R = 0.005, q = 0.9, sigma = 0.15.txt")
+Y = np.loadtxt("../../Data/Current/Y Z = 8, Le_F = 1, Le_X = 1, R = 0.005, q = 0.9, sigma = 0.15.txt")
 #w = np.loadtxt("../Data/W.txt")
 gif = np.loadtxt("../../Data/Current/Gif.txt")
 params = np.loadtxt("../../Data/Current/Params.txt")
@@ -61,12 +61,13 @@ def update_plot(frame):
  
     
 # Посмотреть срез в какой-то момент времени
+
 update_plot(100) 
 
 
-#np.savetxt("../data/temp_config.txt", temp[100,:].reshape(1,-1))
-#np.savetxt("../data/X_config.txt", X[100,:].reshape(1,-1))
-#np.savetxt("../data/Y_config.txt", Y[100,:].reshape(1,-1))
+#np.savetxt("../../Data/Config/Temp.txt", temp[100,:].reshape(1,-1))
+#np.savetxt("../../Data/Config/X.txt", X[100,:].reshape(1,-1))
+#np.savetxt("../../Data/Config/Y.txt", Y[100,:].reshape(1,-1))
 
 #plt.plot(np.linspace(0, 100, 101), np.max(X, axis = 1), '.')
 #plt.grid()
