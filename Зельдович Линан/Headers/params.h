@@ -10,17 +10,17 @@ using namespace std;
     // Поменяй параметры ниже!!!!!
     double z = 15;
     double Le_F = 1;
-    double Le_X = 0.5;
+    double Le_X = 1;
     double sigma = 0.15;
     double q = 0.9;
-    double R = 0.005;
-    double speed_config = -0.076563;
-    double speed = -0.39*pow(z, -0.73);//-0.28*pow(z, -0.59);
+    double R = 1;
+    double speed_config = -0.25;
+    double speed = -0.25;//-0.5*pow(z, -0.4);
 
-    string Z_str = "Z = 8, ";
+    string Z_str = "Z = 9, ";
     string Le_F_str = "Le_F = 1, ";
-    string Le_X_str = "Le_X = 0.5, ";
-    string R_str = "R = 0.005, ";
+    string Le_X_str = "Le_X = 1, ";
+    string R_str = "R = 1, ";
     string q_str = "q = 0.9, ";
     string sigma_str = "sigma = 0.15";
     string txt_str = ".txt";
@@ -33,16 +33,16 @@ using namespace std;
     double X_right = 0;
     double Y_right = 1;
 
-    double L = 700;
-    double T = 15000;
+    double L = 150;
+    double T = 4000;
 
-    double dx = 0.1;
-    double dt = 0.1;
+    double dx = 0.01;
+    double dt = 0.005;
 
     double c_parab = dt/(dx*dx);
     double teta = 0.7;
 
-    double place = 0.6;
+    double place = 0.4;
     double T_config = 4000;
 
     int scale_x = int(L/dx);

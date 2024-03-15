@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1708256107 source:c:\users\домашн\desktop\diploma\Зельдович Линан\speed(r)\main.cpp
+1709664271 source:c:\users\домашн\desktop\diploma\Зельдович Линан\speed(r)\main.cpp
 	<iostream>
 	<vector>
 	<cmath>
@@ -15,7 +15,7 @@
 	<omp.h>
 	"..\Headers\params.h"
 
-1708255953 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\params.h
+1709663311 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\params.h
 	<cmath>
 	<string>
 

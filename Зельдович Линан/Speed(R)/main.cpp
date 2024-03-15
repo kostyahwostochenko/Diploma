@@ -36,7 +36,11 @@ int main()
     string file_name = Z_str + Le_F_str + Le_X_str + q_str + sigma_str + txt_str;
     string path_speed = "..\\Data\\Speed\\R\\" + file_name;
     string path_height = "..\\Data\\Height\\" + file_name;
+    string path_temp = "..\\Data\\Temperature\\" + file_name;
 
+
+    ofstream file_temp;
+    file_temp.open(path_temp);
 
     ofstream speed_file;
     speed_file.open(path_speed);
@@ -46,17 +50,17 @@ int main()
 
 
 
-    R = 0.005;
-    T_config = 10000;
-    T = 500;
+    R = 0.5;
+    T_config = 3000;
+    T = 200;
 
-    while (R <= 0.51){
+    while (R <= 2.01){
 
         load_config(temp, X, Y);
 
-        speed_config = -speed_arr[cnt];
+        speed_config = -0.25*pow(R, -0.42);;//-speed_arr[cnt];
 
-        dt = 0.2;
+        dt = 0.02;
         scale_t_stab = int(T_config/dt);
 
         for(int i = 1; i < scale_t_stab + 1; i++){
@@ -76,7 +80,7 @@ int main()
         }
 
         speed = 0;
-        dt = 0.2;
+        dt = 0.02;
         scale_t = int(T/dt);
 
         auto max_x_start = max_element(X.begin(), X.end());
@@ -128,15 +132,21 @@ int main()
 
         file_height << max_height << " " << width << " " << R << '\n';
         cout << max_height << " " << width << " " << R << '\n';
+
+        auto aaa = distance(X.begin(), max_element(X.begin(), X.end()));
+        file_temp << temp[aaa] << " " << R << '\n';
+        cout << temp[aaa] << " " << R << '\n';
         cout << '\n';
 
 
-        R = 1.166*R;
+        //R = 1.166*R;
+        R = R + 0.1;
         cnt++;
 
     }
     speed_file.close();
     file_height.close();
+    file_temp.close();
 
     return 0;
 }

@@ -20,6 +20,7 @@ int main()
     vector<double> X(scale_x + 1);
     vector<double> Y(scale_x + 1);
     vector<double> w(scale_x + 1);
+    vector<double> theta_0;
 
     if(cnt < 1){
         cnt = 1;}
@@ -44,25 +45,23 @@ int main()
     ofstream file_height;
     file_height.open(path_height);
 
-    z = 5;
-    T_config = 15000;
-    dt = 0.2;
-    T = 400;
+    z = 13.8;
+    T_config = 4000;
+    dt = 0.005;
+    T = 150;
     scale_t_stab = int(T_config/dt);
     scale_t = int(T/dt);
+
+    int cnt_arr = 0;
+    double speed_arr[8] = {0.261625, 0.261625, 0.26125, 0.260375, 0.25925, 0.258125, 0.256625, 0.25525};
+
 
     while (z <= 15.01){
 
         load_config(temp, X, Y);
 
-        if(z > 10){
-            dt = 0.1;
-            T_config = 20000;
-            scale_t_stab = int(T_config/dt);
-            scale_t = int(T/dt);
-        }
 
-        speed_config = -0.39*pow(z, -0.73);
+        speed_config = -0.245;//-speed_arr[cnt_arr];//-0.5*pow(z, -0.4);
 
         for(int i = 1; i < scale_t_stab + 1; i++){
             calculate_w(w, temp, X, Y, z);
@@ -98,6 +97,8 @@ int main()
                 #pragma omp section
                 solver_Y(w, Y, teta, dt, dx, Le_F, Y_left, Y_right, speed);
             }
+            auto max_ind = distance(X.begin(), max_element(X.begin(), X.end()));
+            theta_0.push_back(temp[max_ind]);
         }
 
         auto max_x_finish = max_element(X.begin(), X.end());
@@ -131,14 +132,21 @@ int main()
         file_height << max_height << " " << width << " " << z << '\n';
         cout << max_height << " " << width << " " << z << '\n';
 
+        double theta_av = 0;
+        for(int i = 0; i < theta_0.size(); i++){
+            theta_av += theta_0[i];
+        }
+        theta_av = theta_av/theta_0.size();
+        theta_0.clear();
 
         auto aaa = distance(X.begin(), max_element(X.begin(), X.end()));
-        file_temp << temp[aaa] << " " << z << '\n';
-        cout << temp[aaa] << " " << z << '\n';
+        file_temp << temp[aaa] << " " << theta_av << " " << z << '\n';
+        cout << temp[aaa] << " " << theta_av << " " << z << '\n';
         cout << '\n';
 
 
         z += 0.4;
+        cnt_arr++;
     }
 
     speed_file.close();

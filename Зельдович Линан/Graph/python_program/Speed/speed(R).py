@@ -33,9 +33,9 @@ b = popt[1]
 
 fig = plt.figure()
 
-plt.plot(R_1, speed_1, '-', color = 'r')
+#plt.plot(R_1, speed_1, '-', color = 'r')
 plt.plot(R_2, speed_2, '-', color = 'b')
-plt.plot(R_3, speed_3, '-', color = 'g')
+#plt.plot(R_3, speed_3, '-', color = 'g')
 #plt.text(0, 0.5, "HELLO!", fontsize=15)
 #plt.plot(R, k*R**b, color = 'b')
 
@@ -45,7 +45,7 @@ plt.plot(R_3, speed_3, '-', color = 'g')
 
 
 #plt.legend(['Данные', str(np.exp(b).round(2))+'$\cdot R^{'+str(k.round(2))+'}$ - аппроксимация '], loc = 'best')
-plt.legend(['$Le_F$ = 0.5', '$Le_F$ = 1', '$Le_F$ = 1.5'])
+#plt.legend(['$Le_F$ = 0.5', '$Le_F$ = 1', '$Le_F$ = 1.5'])
 plt.xlabel('R')
 plt.ylabel('Speed')
 

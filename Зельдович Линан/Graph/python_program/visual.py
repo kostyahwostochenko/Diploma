@@ -3,10 +3,10 @@ import numpy as np
 import math
 from matplotlib.animation import FuncAnimation
 
-temp = np.loadtxt("../../Data/Current/Temp Z = 8, Le_F = 1, Le_X = 1, R = 0.005, q = 0.9, sigma = 0.15.txt")
-X = np.loadtxt("../../Data/Current/X Z = 8, Le_F = 1, Le_X = 1, R = 0.005, q = 0.9, sigma = 0.15.txt")
-Y = np.loadtxt("../../Data/Current/Y Z = 8, Le_F = 1, Le_X = 1, R = 0.005, q = 0.9, sigma = 0.15.txt")
-#w = np.loadtxt("../Data/W.txt")
+temp = np.loadtxt("../../Data/Current/Temp Z = 9, Le_F = 1, Le_X = 1, R = 1, q = 0.9, sigma = 0.15.txt")
+X = np.loadtxt("../../Data/Current/X Z = 9, Le_F = 1, Le_X = 1, R = 1, q = 0.9, sigma = 0.15.txt")
+Y = np.loadtxt("../../Data/Current/Y Z = 9, Le_F = 1, Le_X = 1, R = 1, q = 0.9, sigma = 0.15.txt")
+#W = np.loadtxt("../Data/Current/W Z = 9, Le_F = 1, Le_X = 1, R = 1, q = 0.9, sigma = 0.15.txt.txt")
 gif = np.loadtxt("../../Data/Current/Gif.txt")
 params = np.loadtxt("../../Data/Current/Params.txt")
 
@@ -62,12 +62,25 @@ def update_plot(frame):
     
 # Посмотреть срез в какой-то момент времени
 
-update_plot(100) 
+#update_plot(100) 
 
 
 #np.savetxt("../../Data/Config/Temp.txt", temp[100,:].reshape(1,-1))
 #np.savetxt("../../Data/Config/X.txt", X[100,:].reshape(1,-1))
 #np.savetxt("../../Data/Config/Y.txt", Y[100,:].reshape(1,-1))
+
+
+X_max = np.max(X, axis = 1)
+ind_max = np.argmax(X, axis = 1)
+theta_0 = []
+
+for i in range(len(ind_max)):
+    theta_0.append(temp[i, ind_max[i]])
+    
+
+plt.plot(np.linspace(0, 100, 101), theta_0, '.')
+plt.grid()
+
 
 #plt.plot(np.linspace(0, 100, 101), np.max(X, axis = 1), '.')
 #plt.grid()
