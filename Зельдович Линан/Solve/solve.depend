@@ -24,7 +24,7 @@
 	<fstream>
 	"solver.h"
 
-1710437146 source:c:\users\домашн\desktop\diploma\Зельдович Линан\solve\main.cpp
+1710538667 source:c:\users\домашн\desktop\diploma\Зельдович Линан\solve\main.cpp
 	<iostream>
 	<vector>
 	<cmath>
@@ -41,7 +41,7 @@
 	<omp.h>
 	"..\Headers\params.h"
 
-1710448287 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\params.h
+1710630855 c:\users\домашн\desktop\diploma\Зельдович Линан\headers\params.h
 	<cmath>
 	<string>
 

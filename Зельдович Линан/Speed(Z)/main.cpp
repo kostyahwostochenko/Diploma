@@ -45,15 +45,17 @@ int main()
     ofstream file_height;
     file_height.open(path_height);
 
-    z = 13.8;
-    T_config = 4000;
-    dt = 0.005;
-    T = 150;
+    z = 5;
+    T_config = 25000;
+    dt = 0.2;
+    T = 300;
     scale_t_stab = int(T_config/dt);
     scale_t = int(T/dt);
 
     int cnt_arr = 0;
-    double speed_arr[8] = {0.261625, 0.261625, 0.26125, 0.260375, 0.25925, 0.258125, 0.256625, 0.25525};
+    double speed_arr[26] = {0.09875, 0.09475, 0.091, 0.088, 0.085, 0.082, 0.07975, 0.07725,
+                            0.075, 0.073, 0.07125, 0.06925, 0.06775, 0.066, 0.0645, 0.063, 0.06175, 0.0605,
+                            0.05925, 0.05825, 0.05675, 0.056, 0.05475, 0.054, 0.053, 0.05225};
 
 
     while (z <= 15.01){
@@ -61,7 +63,18 @@ int main()
         load_config(temp, X, Y);
 
 
-        speed_config = -0.245;//-speed_arr[cnt_arr];//-0.5*pow(z, -0.4);
+        speed_config = -speed_arr[cnt_arr];//-0.5*pow(z, -0.4);
+
+        if(z > 9){
+            if(z < 13){
+                dt = 0.1;
+                scale_t_stab = int(T_config/dt);
+                scale_t = int(T/dt);}
+            else{
+                dt = 0.05;
+                scale_t_stab = int(T_config/dt);
+                scale_t = int(T/dt);}
+        }
 
         for(int i = 1; i < scale_t_stab + 1; i++){
             calculate_w(w, temp, X, Y, z);
